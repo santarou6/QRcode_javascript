@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		h2 {
+			text-align: center;
+		}
+		section {
+			float: left;
+			margin: 0 30px;
+			width: 172mm;
+			height: 251mm;
+			page-break-after: always;
+		}
+	</style>
+</head>
+<body>
+<section>
+	<h2>QRコード、８種類のマスク</h2>
+	<input type=button id="st" value="set" onclick="main();">
+	<select id="mask">
+	<option value="000">000 → (i+j) mod 2 = 0</option>
+	<option value="001">001 → i mod 2 = 0</option>
+	<option value="010">010 → j mod 3 = 0</option>
+	<option value="011">011 → (i+j) mod 3 = 0</option>
+	<option value="100">100 → (( i div 2)+(j div 3)) mod 2 = 0</option>
+	<option value="101">101 → (ij) mod 2 + (ij) mod 3 = 0</option>
+	<option value="110">110 → ((ij) mod 2 +(ij) mod 3) mod 2 = 0</option>
+	<option value="111">111 → ((ij)mod 3 + (i+j) mod 2) mod 2 = 0</option>
+	</select>
+	<canvas id="canv1" width=520 height=520></canvas>
+</section>
+<script src="index_c99-mask.js"></script>
+</body>
+</html>
